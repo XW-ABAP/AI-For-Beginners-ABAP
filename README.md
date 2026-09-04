@@ -1,0 +1,1 @@
+"To make it easier for SAP ABAP professionals to learn AI, this repository adapts the Python code from the AI-For-Beginners repository into ABAP, complete with localized bug fixes and code reviews by the author."
