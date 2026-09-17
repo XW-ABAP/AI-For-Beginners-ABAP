@@ -1,4 +1,4 @@
-REPORT z_sentiment_analyzer_en. 
+REPORT z_sentiment_analyzer_en.
 
 *----------------------------------------------------------------------*
 * 1. Class Definition
@@ -175,17 +175,28 @@ INITIALIZATION.
 *----------------------------------------------------------------------*
 START-OF-SELECTION.
 
-  " 1. Prepare training data (done silently in background)
+  " 1. Prepare training data (16 records exactly matching Python)
   DATA lt_training_data TYPE lcl_sentiment_analyzer=>tt_training_data.
   lt_training_data = VALUE #(
+    " Positive Reviews (8)
     ( text = `This movie was absolutely amazing and wonderful I loved every minute.` sentiment = `positive` )
     ( text = `Brilliant performance The acting was superb and the story captivating.` sentiment = `positive` )
     ( text = `Fantastic film Highly recommend to everyone Best movie of the year` sentiment = `positive` )
     ( text = `Loved it Great storytelling and beautiful cinematography.` sentiment = `positive` )
+    ( text = `Excellent movie with outstanding performances A must watch.` sentiment = `positive` )
+    ( text = `Amazing This film exceeded all my expectations Truly remarkable.` sentiment = `positive` )
+    ( text = `Wonderful experience The plot was engaging and entertaining.` sentiment = `positive` )
+    ( text = `Superb direction and acting One of the best films I have seen.` sentiment = `positive` )
+
+    " Negative Reviews (8)
     ( text = `Terrible movie Waste of time and money Very disappointed.` sentiment = `negative` )
     ( text = `Awful film Poor acting and boring story Would not recommend.` sentiment = `negative` )
     ( text = `Horrible The worst movie I have ever seen Extremely disappointing.` sentiment = `negative` )
     ( text = `Bad movie with terrible plot Boring and predictable.` sentiment = `negative` )
+    ( text = `Disappointing film Poor execution and weak performances.` sentiment = `negative` )
+    ( text = `Worst movie ever Horrible acting and stupid storyline.` sentiment = `negative` )
+    ( text = `Terrible experience Boring and poorly made Do not waste your time.` sentiment = `negative` )
+    ( text = `Awful Poor quality and uninteresting Complete waste of time.` sentiment = `negative` )
   ).
 
   " 2. Train the model
