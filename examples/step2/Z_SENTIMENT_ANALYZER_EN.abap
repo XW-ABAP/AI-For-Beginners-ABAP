@@ -1,4 +1,4 @@
-REPORT z_sentiment_analyzer_en.
+REPORT z_sentiment_analyzer_en. 
 
 *----------------------------------------------------------------------*
 * 1. Class Definition
